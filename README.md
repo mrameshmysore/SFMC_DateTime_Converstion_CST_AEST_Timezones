@@ -2,7 +2,7 @@ Salesforce Marketing Cloud Servers are in Guatemala Country hence system time wi
 * 16 Hours Difference During Standard Time - AEST (April to October) 
 * 17 Hours Difference During Daylight Savings Time - AEDT (October to April)  
 
-Problmen
+**Problmen:**
 We don’t have the standard functionality (in SQL) which consider above difference and converts the SFMC system time to Melbourne/Sydney time without any difference.
 
 Why do we need to convert the time?
@@ -13,7 +13,7 @@ As explained above Salesforce Marketing Cloud server’s Date & Time is in diffe
 * Use for “Wait By Attribute” in Journeys
 * Datetime stamp for contact record addition/ updating in SFMC.
 
-Solution:
+**Solution:**
 Finding the offset difference between each Time zone and calculating the total difference hours from Guatemala City, Guatemala Country to Sydney City, Australia.
 
 
