@@ -1,0 +1,7 @@
+﻿Field Name,Data Type,Length,Primary Key,Nullable,Default Value
+CST_DATETIME,Date,,,,
+UTC_DATETIME,Date,,,,
+AEST_DATETIME,Date,,,,
+Hours_Difference_CST_UTC,Number,,,,
+Hours_Difference_UTC_AEST,Number,,,,
+Total_Hours_Difference,Number,,,,
