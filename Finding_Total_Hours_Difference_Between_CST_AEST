@@ -1,0 +1,11 @@
+/*This SQL demonstrates finding the total difference hours between Server time GETDATE() to Australian Time using SQL.*/
+
+SELECT CST_DATETIME, UTC_DATETIME, AEST_DATETIME, Hours_Difference_CST_UTC, Hours_Difference_UTC_AEST, Hours_Difference_CST_UTC + Hours_Difference_UTC_AEST as Total_Hours_Difference
+FROM
+(
+  Select CST_DATETIME, UTC_DATETIME, AEST_DATETIME, DATEDIFF(hh, CST_DATETIME, UTC_DATETIME) AS Hours_Difference_CST_UTC, DATEDIFF(hh, UTC_DATETIME, AEST_DATETIME) AS Hours_Difference_UTC_AEST
+  FROM 
+  (
+    Select GETDATE() as CST_DATETIME, GETUTCDATE() as UTC_DATETIME, FORMAT(GETUTCDATE() AT TIME ZONE 'UTC' AT TIME ZONE 'Aus Eastern Standard Time', 'MM/dd/yyyy hh:mm:ss tt') as 'AEST_DATETIME'
+  ) as tb
+) as tb1
